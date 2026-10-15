@@ -27,7 +27,12 @@ An AI-powered sign language recognition and learning platform designed to recogn
 
 ---
 
-## 📌 Overview
+<table>
+  <tr>
+    <td><h2 id="-overview">📌 Overview</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 **SignVerse AI** is a sign language recognition and learning platform that combines computer vision and deep learning to support sign recognition and interactive learning.
 
@@ -40,11 +45,14 @@ The platform is organized into two main modules:
 
 The project is built using Python and integrates tools such as MediaPipe, OpenCV, TensorFlow/Keras, and CustomTkinter.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## ✨ Key Features
+<table>
+  <tr>
+    <td><h2 id="-key-features">✨ Key Features</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 - 🎥 **Video and Camera Processing:** Processes visual input for sign recognition.
 - ✋ **Hand Landmark Detection:** Uses MediaPipe to extract hand landmarks.
@@ -56,11 +64,14 @@ The project is built using Python and integrates tools such as MediaPipe, OpenCV
 - 🖥️ **Desktop Interface:** Provides a graphical interface through CustomTkinter.
 - 🧪 **Model Training Notebook:** Includes a Jupyter Notebook for the WLASL-300 deep learning workflow.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## 🧩 Project Modules
+<table>
+  <tr>
+    <td><h2 id="-project-modules">🧩 Project Modules</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 ### 1. Communication Engine
 
@@ -90,11 +101,14 @@ The accuracy of practice feedback depends on how the selected sign, reference da
 
 `SignVerse_Master_App.py` serves as the main application entry point. It brings together the available project modules through the graphical interface.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## 🏗️ System Architecture
+<table>
+  <tr>
+    <td><h2 id="-system-architecture">🏗️ System Architecture</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 The high-level recognition workflow is illustrated below.
 
@@ -126,11 +140,14 @@ flowchart TD
 | LearnSign Engine | Handles learning and practice functionality |
 | Master Application | Integrates the available modules |
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## 🛠️ Technology Stack
+<table>
+  <tr>
+    <td><h2 id="-technology-stack">🛠️ Technology Stack</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 | Technology | Purpose |
 |---|---|
@@ -145,11 +162,14 @@ flowchart TD
 
 The actual dependencies required to run the application are specified in `requirements.txt`.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## 🧠 Deep Learning Model
+<table>
+  <tr>
+    <td><h2 id="-deep-learning-model">🧠 Deep Learning Model</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 The project uses a trained Keras model for sign classification.
 
@@ -188,11 +208,14 @@ The model processes this temporal sequence to predict one of its supported class
 
 **Note:** The model's class predictions are limited to the vocabulary represented in its training data and label mapping. The number of classes alone does not establish the model's recognition accuracy.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## 📂 Project Structure
+<table>
+  <tr>
+    <td><h2 id="-project-structure">📂 Project Structure</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 Organize the repository approximately as follows. Keep the folder names consistent with the paths used in your Python code.
 
@@ -220,11 +243,14 @@ SignVerse-AI/
 
 **Important:** The dataset, label map, and model must actually exist at the expected locations for the corresponding functionality to work. If your repository uses different folder names, update this structure and the paths in the code accordingly.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## 💻 Prerequisites
+<table>
+  <tr>
+    <td><h2 id="-prerequisites">💻 Prerequisites</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 Before installing the project, make sure you have:
 
@@ -242,11 +268,14 @@ python --version
 git --version
 ```
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## ⚙️ Installation
+<table>
+  <tr>
+    <td><h2 id="-installation">⚙️ Installation</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 ### Step 1: Clone the Repository
 
@@ -282,11 +311,14 @@ pip install -r requirements.txt
 
 If installation fails, check the Python version and the compatibility of the packages listed in `requirements.txt`.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## 📦 Dataset and Model Setup
+<table>
+  <tr>
+    <td><h2 id="-dataset-and-model-setup">📦 Dataset and Model Setup</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 The project uses a trained model and may require additional dataset and label-mapping files.
 
@@ -311,11 +343,14 @@ Large datasets and model files may be better distributed through a separate down
 
 **Troubleshooting:** If the application opens but recognition is unavailable, check whether the model and label-map paths are correct and whether the files have been included or downloaded.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## ▶️ How to Run
+<table>
+  <tr>
+    <td><h2 id="-how-to-run">▶️ How to Run</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 From the root directory of the project, activate your virtual environment and run:
 
@@ -337,11 +372,14 @@ You can also open the notebook in JupyterLab or Visual Studio Code.
 
 **Note:** Running the notebook may require downloading the dataset and preparing the expected input files. Training from scratch is separate from running the application with the saved model.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## 🧭 How to Use
+<table>
+  <tr>
+    <td><h2 id="-how-to-use">🧭 How to Use</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 ### Communication Engine
 
@@ -360,11 +398,14 @@ You can also open the notebook in JupyterLab or Visual Studio Code.
 
 The exact screens and controls depend on the functionality implemented in the current version of the application.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## 🔄 Implementation Workflow
+<table>
+  <tr>
+    <td><h2 id="-implementation-workflow">🔄 Implementation Workflow</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 The overall workflow consists of the following stages:
 
@@ -378,11 +419,14 @@ The overall workflow consists of the following stages:
 8. **Result presentation:** Display the recognition result in the user interface.
 9. **Learning and practice:** Use the learning module's implemented features to support sign practice.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## ⚠️ Limitations
+<table>
+  <tr>
+    <td><h2 id="-limitations">⚠️ Limitations</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 - **Limited vocabulary:** Recognition is restricted to the classes supported by the trained model.
 - **Input conditions:** Performance can vary with lighting, camera quality, hand visibility, and signing speed.
@@ -395,11 +439,14 @@ The overall workflow consists of the following stages:
 
 SignVerse AI is a learning and development project, not a replacement for qualified sign language interpreters.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## 🚀 Future Enhancements
+<table>
+  <tr>
+    <td><h2 id="-future-enhancements">🚀 Future Enhancements</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 Potential improvements include:
 
@@ -413,11 +460,14 @@ Potential improvements include:
 - Improving dependency management and deployment.
 - Adding automated tests for model loading, feature extraction, and application workflows.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## 🤝 Contributing
+<table>
+  <tr>
+    <td><h2 id="-contributing">🤝 Contributing</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 Contributions and suggestions are welcome.
 
@@ -441,19 +491,25 @@ git push origin feature/your-feature
 
 Please avoid committing passwords, personal information, virtual environments, caches, or large files that should be distributed separately.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## 📄 License
+<table>
+  <tr>
+    <td><h2 id="-license">📄 License</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 Choose and add an appropriate open-source license before distributing the project. If you use third-party datasets, libraries, or pretrained resources, follow their respective licenses and usage conditions.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
-## 🙏 Acknowledgements
+<table>
+  <tr>
+    <td><h2 id="-acknowledgements">🙏 Acknowledgements</h2></td>
+    <td align="right" valign="middle"><a href="#-table-of-contents">↑ Back to Contents</a></td>
+  </tr>
+</table>
 
 - The MediaPipe team for hand landmark detection tools.
 - The TensorFlow and Keras communities for deep learning tools.
@@ -461,8 +517,10 @@ Choose and add an appropriate open-source license before distributing the projec
 - The WLASL dataset authors and contributors, subject to the dataset's applicable terms of use.
 - The open-source community for the libraries and tools used in this project.
 
-[↑ Back to Table of Contents](#-table-of-contents)
-
 ---
 
+<div align="center">
+
 **Built with Python, Computer Vision, and Deep Learning.**
+
+</div>
