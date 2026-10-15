@@ -27,9 +27,20 @@ An AI-powered sign language recognition and learning platform designed to recogn
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-overview">📌 Overview</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 **SignVerse AI** is a sign language recognition and learning platform that combines computer vision and deep learning to support sign recognition and interactive learning.
 
@@ -44,9 +55,20 @@ The project is built using Python and integrates tools such as MediaPipe, OpenCV
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-key-features">✨ Key Features</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 - 🎥 **Video and Camera Processing:** Processes visual input for sign recognition.
 - ✋ **Hand Landmark Detection:** Uses MediaPipe to extract hand landmarks.
@@ -60,9 +82,20 @@ The project is built using Python and integrates tools such as MediaPipe, OpenCV
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-project-modules">🧩 Project Modules</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 ### 1. Communication Engine
 
@@ -94,9 +127,20 @@ The accuracy of practice feedback depends on how the selected sign, reference da
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-system-architecture">🏗️ System Architecture</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 The high-level recognition workflow is illustrated below.
 
@@ -130,9 +174,20 @@ flowchart TD
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-technology-stack">🛠️ Technology Stack</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 | Technology | Purpose |
 |---|---|
@@ -149,9 +204,20 @@ The actual dependencies required to run the application are specified in `requir
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-deep-learning-model">🧠 Deep Learning Model</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 The project uses a trained Keras model for sign classification.
 
@@ -192,9 +258,20 @@ The model processes this temporal sequence to predict one of its supported class
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-project-structure">📂 Project Structure</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 Organize the repository approximately as follows. Keep the folder names consistent with the paths used in your Python code.
 
@@ -224,9 +301,20 @@ SignVerse-AI/
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-prerequisites">💻 Prerequisites</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 Before installing the project, make sure you have:
 
@@ -246,9 +334,20 @@ git --version
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-installation">⚙️ Installation</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 ### Step 1: Clone the Repository
 
@@ -286,9 +385,20 @@ If installation fails, check the Python version and the compatibility of the pac
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-dataset-and-model-setup">📦 Dataset and Model Setup</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 The project uses a trained model and may require additional dataset and label-mapping files.
 
@@ -315,9 +425,20 @@ Large datasets and model files may be better distributed through a separate down
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-how-to-run">▶️ How to Run</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 From the root directory of the project, activate your virtual environment and run:
 
@@ -341,9 +462,20 @@ You can also open the notebook in JupyterLab or Visual Studio Code.
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-how-to-use">🧭 How to Use</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 ### Communication Engine
 
@@ -364,9 +496,20 @@ The exact screens and controls depend on the functionality implemented in the cu
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-implementation-workflow">🔄 Implementation Workflow</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 The overall workflow consists of the following stages:
 
@@ -382,9 +525,20 @@ The overall workflow consists of the following stages:
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-limitations">⚠️ Limitations</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 - **Limited vocabulary:** Recognition is restricted to the classes supported by the trained model.
 - **Input conditions:** Performance can vary with lighting, camera quality, hand visibility, and signing speed.
@@ -399,9 +553,20 @@ SignVerse AI is a learning and development project, not a replacement for qualif
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-future-enhancements">🚀 Future Enhancements</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 Potential improvements include:
 
@@ -417,9 +582,20 @@ Potential improvements include:
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-contributing">🤝 Contributing</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 Contributions and suggestions are welcome.
 
@@ -445,17 +621,39 @@ Please avoid committing passwords, personal information, virtual environments, c
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-license">📄 License</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 Choose and add an appropriate open-source license before distributing the project. If you use third-party datasets, libraries, or pretrained resources, follow their respective licenses and usage conditions.
 
 ---
 
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td width="75%" style="border: none; padding: 0;">
+
 <h2 id="-acknowledgements">🙏 Acknowledgements</h2>
 
-<p align="right"><a href="#-table-of-contents">↑ Back to Contents</a></p>
+</td>
+<td width="25%" align="right" valign="middle" style="border: none; padding: 0; white-space: nowrap;">
+
+<a href="#-table-of-contents">↑ Back to Contents</a>
+
+</td>
+</tr>
+</table>
 
 - The MediaPipe team for hand landmark detection tools.
 - The TensorFlow and Keras communities for deep learning tools.
