@@ -1,169 +1,200 @@
-# ✨ SignVerse AI — Sign Language Recognition & Learning Platform
+# 🎯 SignVerse AI — Sign Language Recognition & Learning Platform
 
-**An AI-powered desktop application for sign language recognition, communication assistance, and interactive sign language learning.**
-
-SignVerse AI integrates deep learning, computer vision, and an interactive graphical user interface to support sign-to-text recognition, speech output, sign demonstrations, and learner assessment.
+An AI-powered sign language recognition and learning platform designed to recognize hand signs using deep learning and provide interactive sign-learning features.
 
 ---
 
-## 📌 Table of Contents
+## 📑 Table of Contents
 
 - [Overview](#-overview)
 - [Key Features](#-key-features)
+- [Project Modules](#-project-modules)
 - [System Architecture](#-system-architecture)
 - [Technology Stack](#-technology-stack)
 - [Deep Learning Model](#-deep-learning-model)
 - [Project Structure](#-project-structure)
+- [Prerequisites](#-prerequisites)
 - [Installation](#-installation)
 - [Dataset and Model Setup](#-dataset-and-model-setup)
-- [Running the Application](#-running-the-application)
-- [Application Modules](#-application-modules)
+- [How to Run](#-how-to-run)
+- [How to Use](#-how-to-use)
+- [Implementation Workflow](#-implementation-workflow)
 - [Limitations](#-limitations)
 - [Future Enhancements](#-future-enhancements)
 - [Contributing](#-contributing)
 - [License](#-license)
+- [Acknowledgements](#-acknowledgements)
 
 ---
 
-## 🚀 Overview
+## 📌 Overview
 
-SignVerse AI is a Python-based desktop platform designed to make sign language recognition and learning more accessible through artificial intelligence.
+**SignVerse AI** is a sign language recognition and learning platform that combines computer vision and deep learning to support sign recognition and interactive learning.
 
-The application combines a deep-learning recognition pipeline with an interactive learning environment. It processes hand landmarks extracted from live camera frames and uses a trained neural network to predict signs from temporal sequences.
+The project extracts hand landmarks from video frames, converts them into numerical feature vectors, and uses a trained deep learning model to predict signs from temporal sequences.
 
-The platform consists of two primary modules:
+The platform is organized into two main modules:
 
-- **Communication Engine:** Supports live sign-to-text recognition, speech output, and text-to-sign visualization.
-- **LearnSign Engine:** Provides sign demonstrations, guided lessons, live practice, and interactive quizzes with learner progress tracking.
+- **Module 1 — Communication Engine:** Supports sign recognition through the trained model.
+- **Module 2 — LearnSign Engine:** Provides sign-learning and practice functionality.
 
-The project uses the **WLASL-300 vocabulary subset**, which contains 300 American Sign Language (ASL) gloss classes.
+The project is built using Python and integrates tools such as MediaPipe, OpenCV, TensorFlow/Keras, and CustomTkinter.
 
-## 🎯 Key Features
+[↑ Back to Table of Contents](#-table-of-contents)
 
-### 💬 Module 1: Communication Engine
+---
 
-- Real-time webcam input for sign recognition.
-- Hand landmark extraction using MediaPipe.
-- Temporal sequence-based sign classification.
-- Predicted sign labels and confidence scores.
-- Sentence buffering and text-to-speech output.
-- Text input for sign visualization.
-- Skeleton-based hand visualization for the avatar interface.
+## ✨ Key Features
 
-### 🎓 Module 2: LearnSign Engine
+- 🎥 **Video and Camera Processing:** Processes visual input for sign recognition.
+- ✋ **Hand Landmark Detection:** Uses MediaPipe to extract hand landmarks.
+- 🧠 **Deep Learning-Based Recognition:** Uses a trained Keras model for sign classification.
+- 🔢 **Feature Extraction:** Converts detected hand landmarks into numerical feature vectors.
+- ⏱️ **Temporal Sequence Processing:** Uses a sequence of 30 frames as model input.
+- 💬 **Communication Module:** Provides a recognition workflow through the application.
+- 📚 **Learning Module:** Supports interactive sign-learning and practice features.
+- 🖥️ **Desktop Interface:** Provides a graphical interface through CustomTkinter.
+- 🧪 **Model Training Notebook:** Includes a Jupyter Notebook for the WLASL-300 deep learning workflow.
 
-- Interactive sign language learning interface.
-- Search functionality for vocabulary signs.
-- Human signer video demonstrations from the WLASL dataset.
-- Skeleton visualization mode.
-- Live webcam-based practice interface.
-- Interactive vocabulary quizzes.
-- Learner profiles and progress tracking.
-- Quiz scores, mastered signs, and mistake history.
+[↑ Back to Table of Contents](#-table-of-contents)
 
-### 🖥️ User Interface
+---
 
-- Dark-themed desktop interface built with CustomTkinter.
-- Central dashboard for navigating application modules.
-- Separate interfaces for communication and learning.
-- Reusable model and label-map loading through the main application.
+## 🧩 Project Modules
+
+### 1. Communication Engine
+
+The Communication Engine is implemented in `module1_engine.py`.
+
+Its primary purpose is to process visual input, extract hand landmarks, and use the trained model to predict signs.
+
+**Main workflow:**
+
+1. Capture or receive visual input.
+2. Detect hand landmarks.
+3. Extract numerical features.
+4. Prepare a sequence of frames.
+5. Pass the sequence to the trained model.
+6. Obtain the predicted sign class.
+7. Display the recognition result through the application.
+
+### 2. LearnSign Engine
+
+The LearnSign Engine is implemented in `module2_engine.py`.
+
+It provides learning and practice functionality intended to help users interact with the sign-learning workflow.
+
+The accuracy of practice feedback depends on how the selected sign, reference data, and comparison logic are implemented.
+
+### 3. Master Application
+
+`SignVerse_Master_App.py` serves as the main application entry point. It brings together the available project modules through the graphical interface.
+
+[↑ Back to Table of Contents](#-table-of-contents)
 
 ---
 
 ## 🏗️ System Architecture
 
-The application follows a modular architecture that separates model inference, user-interface logic, and learning functionality.
+The high-level recognition workflow is illustrated below.
 
-```text
-                    SIGNVERSE AI
-                          |
-                SignVerse Master App
-                          |
-             Shared Model and Label Map
-                          |
-             +------------+------------+
-             |                         |
-      Communication Engine       LearnSign Engine
-             |                         |
-       Webcam Input              Learning Interface
-             |                         |
-       MediaPipe Hands          Sign Video Demos
-             |                         |
-       126-D Landmark           Live Practice
-          Features                    |
-             |                   Quiz Engine
-       30-Frame Sequence              |
-             |                  Learner Profiles
-       Trained Keras Model
-             |
-       Sign Classification
-             |
-       Text and Speech Output
+```mermaid
+flowchart TD
+    A[Camera or Video Input] --> B[OpenCV Frame Processing]
+    B --> C[MediaPipe Hand Landmark Detection]
+    C --> D[Feature Extraction]
+    D --> E[30-Frame Sequence]
+    E --> F[Trained Keras Model]
+    F --> G[Predicted Sign Class]
+    G --> H[Application Interface]
+
+    I[LearnSign Engine] --> J[Learning and Practice Workflow]
+    J --> H
+    K[Master Application] --> I
+    K --> A
 ```
 
-### Processing Pipeline
+### Architecture Components
 
-1. Capture video frames from the webcam.
-2. Extract hand landmarks using MediaPipe.
-3. Normalize and organize the landmarks into a feature vector.
-4. Build a sequence of 30 consecutive frames.
-5. Pass the sequence to the trained deep-learning model.
-6. Obtain class probabilities and identify the predicted gloss.
-7. Display the prediction and confidence score.
-8. Optionally convert the recognized text into speech.
+| Component | Responsibility |
+|---|---|
+| OpenCV | Camera and video frame processing |
+| MediaPipe | Hand landmark detection |
+| Feature extraction | Converts landmarks into numerical features |
+| Keras model | Predicts the sign class |
+| Communication Engine | Handles the recognition workflow |
+| LearnSign Engine | Handles learning and practice functionality |
+| Master Application | Integrates the available modules |
+
+[↑ Back to Table of Contents](#-table-of-contents)
 
 ---
 
 ## 🛠️ Technology Stack
 
-| Component | Technology |
+| Technology | Purpose |
 |---|---|
-| Programming Language | Python |
-| Desktop GUI | CustomTkinter |
-| Computer Vision | OpenCV |
-| Hand Landmark Detection | MediaPipe |
-| Deep Learning | TensorFlow / Keras |
-| Numerical Processing | NumPy |
-| Image Processing | Pillow |
-| Text-to-Speech | pyttsx3 |
-| Dataset | WLASL-300 |
-| Model Format | Keras `.keras` |
-| Development Notebook | Jupyter Notebook |
+| Python | Main programming language |
+| TensorFlow / Keras | Deep learning model loading and inference |
+| MediaPipe | Hand landmark detection |
+| OpenCV | Video and camera processing |
+| NumPy | Numerical operations and feature arrays |
+| CustomTkinter | Desktop graphical user interface |
+| Jupyter Notebook | Model development and experimentation |
+| Git and GitHub | Version control and project hosting |
+
+The actual dependencies required to run the application are specified in `requirements.txt`.
+
+[↑ Back to Table of Contents](#-table-of-contents)
 
 ---
 
 ## 🧠 Deep Learning Model
 
-SignVerse AI uses a trained Keras model to classify temporal sequences of hand landmarks.
+The project uses a trained Keras model for sign classification.
 
-### Input Representation
+### Model Configuration
 
 | Parameter | Value |
 |---|---|
 | Sequence length | 30 frames |
-| Landmarks per hand | 21 |
-| Coordinates per landmark | 3 (x, y, z) |
-| Maximum number of hands | 2 |
 | Features per frame | 126 |
-| Output classes | 300 |
+| Number of output classes | 300 |
+| Model input shape | `(batch_size, 30, 126)` |
+| Saved model | `best_signverse_model_300.keras` |
+| Training notebook | `SignVerse_Module1_WLASL300_DeepLearning.ipynb` |
 
-The expected model input shape is:
+### Feature Representation
 
-```text
-(batch_size, 30, 126)
-```
+The expected 126 features per frame are based on the following representation:
 
-The model outputs scores for 300 sign classes. The application selects the class with the highest predicted score and maps it to the corresponding vocabulary label.
+- 21 landmarks per hand.
+- 3 coordinates per landmark: X, Y, and Z.
+- 2 hands.
 
-The training notebook documents the model development and evaluation workflow. The saved model is intended to be used for inference by the desktop application.
+Therefore:
 
-**Note:** Recognition performance depends on the training data, camera conditions, hand visibility, signing variation, and consistency between training-time and inference-time preprocessing.
+\[
+21 \times 3 \times 2 = 126
+\]
+
+A sequence of 30 frames produces the input shape:
+
+\[
+30 \times 126
+\]
+
+The model processes this temporal sequence to predict one of its supported classes.
+
+**Note:** The model's class predictions are limited to the vocabulary represented in its training data and label mapping. The number of classes alone does not establish the model's recognition accuracy.
+
+[↑ Back to Table of Contents](#-table-of-contents)
 
 ---
 
 ## 📂 Project Structure
 
-Organize the repository as follows:
+Organize the repository approximately as follows. Keep the folder names consistent with the paths used in your Python code.
 
 ```text
 SignVerse-AI/
@@ -185,34 +216,48 @@ SignVerse-AI/
 └── DATASET_WLASL/
     ├── WLASL_v0.3.json
     └── videos/
-        └── ...
 ```
 
-**Important:** The directory names shown above must match the paths used by your application. The dataset videos, label map, and trained model must be available at the expected locations before running the corresponding features.
+**Important:** The dataset, label map, and model must actually exist at the expected locations for the corresponding functionality to work. If your repository uses different folder names, update this structure and the paths in the code accordingly.
 
-Do not upload large datasets or model files to GitHub without checking repository size limits and dataset redistribution permissions.
+[↑ Back to Table of Contents](#-table-of-contents)
+
+---
+
+## 💻 Prerequisites
+
+Before installing the project, make sure you have:
+
+- Python 3 installed.
+- Git installed.
+- A working webcam if you want to use live camera features.
+- The required Python packages.
+- The trained model and label mapping.
+- The necessary dataset files for any functionality that depends on the original dataset.
+
+Check your Python and Git installations:
+
+```bash
+python --version
+git --version
+```
+
+[↑ Back to Table of Contents](#-table-of-contents)
 
 ---
 
 ## ⚙️ Installation
 
-### Prerequisites
+### Step 1: Clone the Repository
 
-- Python installed on your system.
-- A working webcam for live recognition and practice.
-- A compatible TensorFlow and MediaPipe environment.
-- Git for cloning the repository.
-
-### Step 1: Clone the repository
+Replace the example URL with your actual GitHub repository URL.
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/YOUR_USERNAME/SignVerse-AI.git
 cd SignVerse-AI
 ```
 
-Replace the placeholder with your actual GitHub repository URL.
-
-### Step 2: Create a virtual environment
+### Step 2: Create a Virtual Environment
 
 **Windows:**
 
@@ -228,94 +273,147 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-### Step 3: Install dependencies
+### Step 3: Install Dependencies
 
 ```bash
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Use a Python version supported by your selected TensorFlow and MediaPipe releases. If installation fails, resolve the package-version compatibility issues before running the application.
+If installation fails, check the Python version and the compatibility of the packages listed in `requirements.txt`.
+
+[↑ Back to Table of Contents](#-table-of-contents)
 
 ---
 
 ## 📦 Dataset and Model Setup
 
-The project uses the WLASL dataset for ASL sign vocabulary.
+The project uses a trained model and may require additional dataset and label-mapping files.
 
-Before launching the application, ensure the following resources are available:
+### Required Resources
 
-1. The trained Keras model: `best_signverse_model_300.keras`
-2. The class label mapping: `label_map_300.json`
-3. The WLASL metadata file: `WLASL_v0.3.json`
-4. The corresponding video files required for sign demonstrations.
+| Resource | Purpose |
+|---|---|
+| `best_signverse_model_300.keras` | Trained sign classification model |
+| `label_map_300.json` | Maps class identifiers to sign labels |
+| `WLASL_v0.3.json` | Dataset metadata, if required by the implementation |
+| `videos/` | Dataset video files, if required by the implementation |
 
-Place each resource in the directory expected by the code.
+### Setup Instructions
 
-If you are training the model from scratch, open the notebook:
+1. Place the trained model inside `saved_models/`.
+2. Place the label mapping inside `preprocessed_data_300/`.
+3. Place the dataset metadata and videos in the locations expected by the code if you need dataset-dependent functionality.
+4. Verify that the file paths in the Python scripts match the actual folder structure.
+5. Check the dataset's terms of use before redistributing its videos or metadata.
 
-```text
-SignVerse_Module1_WLASL300_DeepLearning.ipynb
-```
+Large datasets and model files may be better distributed through a separate download link or Git Large File Storage (Git LFS), depending on their size and redistribution permissions.
 
-Run the notebook in an environment containing the required dependencies and dataset. Ensure that the preprocessing and label mapping used during training match those used during inference.
+**Troubleshooting:** If the application opens but recognition is unavailable, check whether the model and label-map paths are correct and whether the files have been included or downloaded.
+
+[↑ Back to Table of Contents](#-table-of-contents)
 
 ---
 
-## ▶️ Running the Application
+## ▶️ How to Run
 
-Once the dependencies, model, label map, and required dataset resources are configured, run:
+From the root directory of the project, activate your virtual environment and run:
 
 ```bash
 python SignVerse_Master_App.py
 ```
 
-The main dashboard provides access to the available modules.
+This launches the master application if the dependencies and required resources are configured correctly.
 
-### Using Module 1
+### Run the Training Notebook
 
-1. Open the Communication Engine.
-2. Select the live camera recognition option.
-3. Allow webcam access through your operating system.
-4. Perform a sign in front of the camera.
-5. Observe the predicted gloss and confidence score.
-6. Use the speech feature to hear the recognized text.
-7. Use the text-to-sign interface to explore the avatar visualization.
+To explore the training workflow:
 
-### Using Module 2
+```bash
+jupyter notebook SignVerse_Module1_WLASL300_DeepLearning.ipynb
+```
 
-1. Open the LearnSign Engine.
-2. Browse the lesson curriculum or search for a sign.
-3. View the available signer demonstration.
-4. Explore the visualization mode.
-5. Use the practice interface and quizzes.
-6. Review the available learner progress and quiz history.
+You can also open the notebook in JupyterLab or Visual Studio Code.
+
+**Note:** Running the notebook may require downloading the dataset and preparing the expected input files. Training from scratch is separate from running the application with the saved model.
+
+[↑ Back to Table of Contents](#-table-of-contents)
+
+---
+
+## 🧭 How to Use
+
+### Communication Engine
+
+1. Launch the master application.
+2. Open the communication or recognition module.
+3. Provide the required camera or video input.
+4. Allow the application to process the frames.
+5. Review the predicted sign output.
+
+### LearnSign Engine
+
+1. Open the learning module.
+2. Select an available learning or practice activity.
+3. Follow the instructions displayed by the application.
+4. Review the practice feedback provided by the implemented comparison logic.
+
+The exact screens and controls depend on the functionality implemented in the current version of the application.
+
+[↑ Back to Table of Contents](#-table-of-contents)
+
+---
+
+## 🔄 Implementation Workflow
+
+The overall workflow consists of the following stages:
+
+1. **Input collection:** Acquire video frames from a camera or video source.
+2. **Frame processing:** Process the frames using OpenCV.
+3. **Landmark detection:** Detect hand landmarks using MediaPipe.
+4. **Feature preparation:** Represent the landmarks as numerical feature vectors.
+5. **Sequence preparation:** Construct the expected 30-frame input sequence.
+6. **Model inference:** Pass the sequence to the trained Keras model.
+7. **Classification:** Obtain the predicted class and map it to a label.
+8. **Result presentation:** Display the recognition result in the user interface.
+9. **Learning and practice:** Use the learning module's implemented features to support sign practice.
+
+[↑ Back to Table of Contents](#-table-of-contents)
 
 ---
 
 ## ⚠️ Limitations
 
-- The current recognition system is designed around a fixed vocabulary of 300 ASL gloss classes.
-- It does not provide unrestricted sign language translation or complete grammatical interpretation.
-- Accuracy can vary with lighting, camera placement, signing speed, hand occlusion, and signer differences.
-- The avatar interface currently provides skeleton-style visualization rather than a fully articulated 3D anatomical model.
-- The live practice similarity score requires a validated reference-sign representation before it can be treated as a meaningful measure of signing accuracy.
-- Runtime performance depends on the hardware and software environment.
-- The application should not be treated as a substitute for qualified sign language interpretation in critical communication settings.
+- **Limited vocabulary:** Recognition is restricted to the classes supported by the trained model.
+- **Input conditions:** Performance can vary with lighting, camera quality, hand visibility, and signing speed.
+- **Dataset dependence:** Recognition performance depends on the training data and how well it represents real-world signing.
+- **Continuous signing:** Recognizing isolated signs does not automatically provide complete sentence-level sign language translation.
+- **Practice feedback:** The usefulness of practice scores depends on the validity of the reference data and comparison method.
+- **Hardware dependence:** Inference speed varies according to the device and execution environment.
+- **Sign language variation:** Sign languages differ by region and community; a model trained on a particular vocabulary should not be treated as universal.
+- **Model evaluation:** Accuracy and inference speed should be measured using a documented evaluation procedure before being reported as verified results.
+
+SignVerse AI is a learning and development project, not a replacement for qualified sign language interpreters.
+
+[↑ Back to Table of Contents](#-table-of-contents)
 
 ---
 
-## 🔮 Future Enhancements
+## 🚀 Future Enhancements
 
-- Improve recognition stability with temporal smoothing and prediction filtering.
-- Validate the model using leakage-free train, validation, and test splits.
-- Add reference-based temporal alignment for sign practice evaluation.
-- Develop a fully articulated 3D avatar with realistic hand and arm motion.
-- Expand support for larger vocabularies and additional sign languages.
-- Improve sentence-level translation and grammatical modeling.
-- Add more robust learner analytics and progress visualization.
-- Improve error handling, resource cleanup, and deployment portability.
-- Package the application for easier installation on supported operating systems.
+Potential improvements include:
+
+- Expanding the supported sign vocabulary.
+- Improving recognition under different lighting and camera conditions.
+- Adding continuous sign recognition and sentence-level processing.
+- Improving the reference-based practice scoring mechanism.
+- Enhancing the user interface and recognition feedback.
+- Adding a more realistic and expressive 3D signing avatar.
+- Evaluating the model using independent test data.
+- Improving dependency management and deployment.
+- Adding automated tests for model loading, feature extraction, and application workflows.
+
+[↑ Back to Table of Contents](#-table-of-contents)
 
 ---
 
@@ -323,29 +421,48 @@ The main dashboard provides access to the available modules.
 
 Contributions and suggestions are welcome.
 
-1. Fork the repository.
-2. Create a feature branch.
-3. Implement your changes.
-4. Test the application and relevant model workflows.
-5. Submit a pull request describing your changes.
+To contribute:
 
-For substantial changes, include the problem being addressed, the implementation approach, and any relevant testing results.
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Test the changes locally.
+5. Commit your work with a descriptive message.
+6. Open a pull request explaining the changes.
+
+Example:
+
+```bash
+git checkout -b feature/your-feature
+git add .
+git commit -m "add your feature"
+git push origin feature/your-feature
+```
+
+Please avoid committing passwords, personal information, virtual environments, caches, or large files that should be distributed separately.
+
+[↑ Back to Table of Contents](#-table-of-contents)
 
 ---
 
 ## 📄 License
 
-No license has been specified for this project yet.
+Choose and add an appropriate open-source license before distributing the project. If you use third-party datasets, libraries, or pretrained resources, follow their respective licenses and usage conditions.
 
-Before distributing the source code, trained model, or dataset, add an appropriate license and verify the applicable licensing and redistribution terms of all third-party components and datasets.
+[↑ Back to Table of Contents](#-table-of-contents)
 
 ---
 
-## 👨‍💻 Project Information
+## 🙏 Acknowledgements
 
-**Project:** SignVerse AI  
-**Domain:** Artificial Intelligence, Deep Learning, Computer Vision, and Assistive Technology  
-**Primary Dataset:** WLASL-300  
-**Application Type:** Python Desktop Application
+- The MediaPipe team for hand landmark detection tools.
+- The TensorFlow and Keras communities for deep learning tools.
+- The OpenCV community for computer vision utilities.
+- The WLASL dataset authors and contributors, subject to the dataset's applicable terms of use.
+- The open-source community for the libraries and tools used in this project.
 
-*SignVerse AI aims to support accessible communication and interactive sign language learning through computer vision and deep learning.*
+[↑ Back to Table of Contents](#-table-of-contents)
+
+---
+
+**Built with Python, Computer Vision, and Deep Learning.**
